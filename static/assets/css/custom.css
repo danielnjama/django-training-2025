@@ -1,0 +1,8 @@
+.pwhite {
+  color: white !important;
+  background: transparent !important;
+  z-index: 10;
+  position: relative;
+  opacity: 1 !important;
+  mix-blend-mode: normal !important;
+}

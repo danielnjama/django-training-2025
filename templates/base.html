@@ -1,0 +1,249 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<!--HTML START-->
+
+
+<head>
+    <!--HEAD START-->
+    {% block title %}
+    <title>Glint</title>
+    {% endblock title %}
+    <!--::::: support meta :::::::-->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!--::::: ALL CSS CALLING :::::::-->
+
+
+
+    <link rel="stylesheet" href="{% static "assets/css/plugins/animate.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/plugins/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/plugins/fontawesome.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/plugins/modal-video.min.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/plugins/stellarnav.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/plugins/owl.carousel.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/typography.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/theme.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/button.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/inner.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/custom.css" %}">
+    <link rel="stylesheet" href="{% static "assets/css/responsive.css" %}">
+
+
+    
+
+
+</head>
+<!--HEADE END-->
+
+<body><!--BODY START-->
+
+    <!--PLACEHOLDER AREA START-->
+    <div class="preloader">
+        <div class="lds-dual-ring"></div>
+    </div>
+    <!--PLACEHOLDER AREA END-->
+
+    <div class="site site-black"> <!--::::: SITE AREA START :::::::-->
+          <!--::::: BANNER AREA START :::::::-->
+        <div class="header-banner-area">
+            <div class="container">
+                <div class="row">
+                    <div class=" col-md-5 align-self-center">
+                        <div class="banner-comments">
+                            <div class="banner-icon">
+                                <i class="fal fa-comments-alt"></i>
+                            </div>
+                            <div class="banner-carousel owl-carousel">
+                                <div class="banner-single-carousel">
+                                    <p>Fox News Anchor Bret Baier...</p>
+                                </div>
+                                <div class="banner-single-carousel">
+                                    <p>Elementor Is Great WordPress...</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-7 text-right align-self-center">
+                        <div class="banner-social-wrap">
+                            <div class="banner-social">
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="banner-contact">
+                                <a href="#" class="contact-btn"><i class="fal fa-angle-double-right"></i> Contact Me</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--::::: BANNER AREA END :::::::-->
+
+        <!--::::: HEADER AREA START :::::::-->
+        <div class="header-area header-main" id="header">
+            <!--scroll to up btn-->
+            <a href="#" class="up-btn"><i class="fal fa-angle-up"></i></a>
+            <div class="container">
+                <div class="row">
+                    <div class="col-6 col-lg-3 align-self-center">
+                        <a href="{% url "index" %}" class="logo"><img src="{% static "assets/img/logo/logo.png" %}" alt=""></a>
+                    </div>
+                    <div class="col-6 text-center align-self-center">
+                        <div class="main-menu">
+                            <div class="stellarnav">
+                                <ul class="navbarmneuclass">
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="{% url "about" %}">About</a></li>
+                                    <li><a href="{% url "portfolio" %}">Portfolio</a></li>
+                                    <li><a href="{% url "blog" %}">Blog</a></li>
+                                    <li><a href="{% url "contact" %}">Contact us</a></li>
+                                    
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-none d-lg-block col-lg-3 align-self-center text-right">
+                        <div class="search-area">
+                            <div class="search-box">
+                                <form action="#">
+                                    <input type="search" placeholder="Search">
+                                </form>
+                                <div class="search-btn">
+                                    <a href="#"><i class="fas fa-search"></i></a>
+                                </div>
+                            </div>
+                            <div class="grid-menu" id="grid-side">
+                                <img src="{% static "assets/img/icon/hamburger.svg" %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="slide-widgest-wrap" id="slide-widgest">
+                <div class="side-widgest" id="side-content">
+                    <div class="side-close" id="close-btn">
+                    <i class="fal fa-times"></i>
+                </div>
+                    <div class="logo">
+                        <a href="#"><img src="{% static "assets/img/logo/logo.png" %}" alt=""></a>
+                    </div>
+                    <div class="side-content">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint ratione reprehenderit, error qui enim sit ex provident iure, dolor, nulla eaque delectus, repudiandae commodi. Velit assumenda odit quisquam at, error suscipit unde, necessitatibus ipsum ratione excepturi ducimus labore, totam dolorem.</p>
+                    </div>
+                    <div class="side-social">
+                        <ul>
+                            <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                            <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--::::: HEADER AREA END :::::::-->
+        {% block content %}
+        
+        {% endblock content %}
+        <!--:::::FOOTER AREA START :::::::-->
+        <div class="footer-area footer-area1 section-padding">
+             <!--:::::LOGO AREA START :::::::-->
+        <div class="logo-carousel">
+            <div class="container">
+                <div class="row">
+                    <div class="logos owl-carousel">
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                               <img src="{% static "assets/img/logo/1.svg" %}" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                                <img src="{% static "assets/img/logo/01.png" %}" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                                <img src="{% static "assets/img/logo/02.png" %}" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                                <img src="{% static "assets/img/logo/03.png" %}" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                                <img src="{% static "assets/img/logo/04.png" %}" alt="">
+                            </div>
+                        </div>
+                        <div class="single-logo-table">
+                            <div class="single-logo-table-cell">
+                                <img src="{% static "assets/img/logo/02.png" %}" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="space-100"></div>
+        <!--:::::LOGO AREA END :::::::-->
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 m-auto text-center">
+                        <div class="footer-menu">
+                            <ul>
+                                <li><a href="#">about me</a></li>
+                                <li><a href="#">career</a></li>
+                                <li><a href="#">blog</a></li>
+                                <li><a href="#">gallery</a></li>
+                                <li><a href="#">contact me</a></li>
+                            </ul>
+                        </div>
+                        <div class="space-40"></div>
+                        <div class="copyright">
+                            <p>Copyright © 2019 by <span> QuomodoTheme </span> all right reserved</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--:::::FOOTER AREA END :::::::-->
+                          
+    </div> <!--:::::sitea area end :::::::-->
+
+
+    <!--:::::jquery 3.2.1 js :::::::-->
+    <script src="{% static "assets/js/plugins/jQuery.2.1.0.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/bootstrap.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/jquery.nav.js" %}"></script>
+    <script src="{% static "assets/js/plugins/jquery.waypoints.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/jquery-modal-video.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/stellarnav.js" %}"></script>
+    <script src="{% static "assets/js/plugins/popper.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/owl.carousel.js" %}"></script>
+    <script src="{% static "assets/js/plugins/wow.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/easypiechart.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/animatenumber.min.js" %}"></script>
+    <script src="{% static "assets/js/plugins/circle-progress.js" %}"></script>
+    <script src="{% static "assets/js/plugins/bars.js" %}"></script>
+    <script src="{% static "assets/js/plugins/appear.js" %}"></script>
+    <script src="{% static "assets/js/plugins/jquery.hoverdir.js" %}"></script>
+    <script src="{% static "assets/js/plugins/isotop.v3.0.4.min.js" %}"></script>
+    <script src="{% static "assets/js/main.js" %}"></script>
+
+    
+
+
+</body>
+<!--body end-->
+
+
+</html>
+<!--html end-->
