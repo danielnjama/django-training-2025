@@ -10,15 +10,9 @@ from .models import Blog, Comment, Category, Tag
 from django.db.models import Count
 from django.core.mail import send_mail
 from django.http import JsonResponse
+from django.core.paginator import Paginator,EmptyPage,PageNotAnInteger
 # from .forms import CustomPasswordResetForm
 
-
-
-
-
-# class CustomPasswordResetView(PasswordResetView):
-#     form_class = CustomPasswordResetForm
-#     template_name = 'registration/password_reset_form.html'  # or your custom path
 
 
 
@@ -38,7 +32,7 @@ def about(request):
 
 
 def blog(request):
-    category_slug = request.GET.get('category')  # from URL query parameter
+    category_slug = request.GET.get('category')
     tag_url = request.GET.get('tag')
 
     categories = Category.objects.annotate(blog_count=Count('blog'))
@@ -46,19 +40,32 @@ def blog(request):
 
     if category_slug:
         category = get_object_or_404(Category, url=category_slug)
-        blogs = Blog.objects.filter(category=category).order_by('-created_at')
+        blogs_list = Blog.objects.filter(category=category).order_by('-created_at')
     elif tag_url:
         tag = get_object_or_404(Tag, url=tag_url)
-        blogs = Blog.objects.filter(tags=tag).order_by('-created_at')
+        blogs_list = Blog.objects.filter(tags=tag).order_by('-created_at')
     else:
-        category = None
-        blogs = Blog.objects.all().order_by('-created_at')
+        blogs_list = Blog.objects.all().order_by('-created_at')
+
+    #  Pagination setup
+    paginator = Paginator(blogs_list, 1)  # Show 3 blogs per page (adjust as needed)
+    page = request.GET.get('page')
+
+    try:
+        blogs = paginator.page(page)
+    except PageNotAnInteger:
+        blogs = paginator.page(1)
+    except EmptyPage:
+        blogs = paginator.page(paginator.num_pages)
 
     return render(request, 'blog.html', {
         'blogs': blogs,
         'categories': categories,
-        # 'selected_category': category,
-        'tags':tags
+        'tags': tags,
+        'paginator': paginator,
+        'page': page,
+        'category_slug': category_slug,
+        'tag_url': tag_url,
     })
 
 
